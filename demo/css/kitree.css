@@ -1,0 +1,128 @@
+/* Ki Tree Reset */
+.kiTree{
+	font-size:13px;
+}
+.kiTree ol,
+.kiTree ul,
+.kiTree li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.kiTree img,
+.kiTree input,
+.kiTree select,
+.kiTree button{
+	vertical-align:middle;
+}
+a{
+	color:#404040;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+
+/* Ki Tree UI */
+.kiTree{
+	position:relative;
+	padding:10px 15px;
+	overflow:auto;
+}
+.kiTree.bordered{
+	border:1px #d3d3d3 solid;
+}
+.kiTree ul{
+	display:block;
+	padding:0;
+	margin-bottom:5px;
+}
+.kiTree ul.hidden{
+	display:none;
+}
+.kiTree ul li{
+	display:block;
+	padding-left:25px;
+	line-height:24px;
+}
+.kiTree ul li a{
+	display:block;
+	white-space:nowrap;
+	border-bottom:1px #fff solid;
+}
+.kiTree ul li a b.keyword{
+	color:#ff6600;
+}
+.kiTree ul li > em{
+	display:block;
+	position:absolute;
+	margin:3px 0 0 -24px;
+	width:18px;
+	height:18px;
+	z-index:10;
+}
+.kiTree ul li > em sup{
+	display:none;
+	position:absolute;
+	top:-5px;
+	left:-9px;
+	padding:0 2px;
+	min-width:14px;
+	height:14px;
+	font-size:10px;
+	font-style:normal;
+	color:#000;
+	line-height:14px;
+	text-align:center;
+	background:rgba(180,180,180,0.4);
+	border-radius:8px;
+	box-sizing:border-box;
+}
+.kiTree ul li > em.on{
+	background:url(../images/icon_folderOpen.png) no-repeat;
+	cursor:pointer
+}
+.kiTree ul li > em.off{
+	background:url(../images/icon_folderClose.png) no-repeat;
+	cursor:pointer
+}
+.kiTree ul li > em.none{
+	background:url(../images/icon_folderNone.png) no-repeat;
+}
+.kiTree.useCount ul li > em.off sup{
+	display:block;
+}
+.kiTree > ul > li > em.none{
+	background:url(../images/icon_folderGray.png) no-repeat;
+}
+
+/* use checkbox */
+.kiTree.useCheckbox ul li a{
+	display:block;
+	margin-left:20px;
+	white-space:nowrap;
+}
+.kiTree.useCheckbox ul li > span.checkBox{
+	display:block;
+	position:absolute;
+	margin-top:3px;
+	height:18px;
+	line-height:18px;
+}
+.kiTree.useCheckbox ul li > span.checkBox input{
+	vertical-align:middle;
+}
+
+/* drag item */
+.kiTree .dragTreeItem{
+	position:absolute;
+	left:0;
+	right:0;
+	height:24px;
+	font-size:13px;
+	text-align:right;
+}
+.kiTree .dragTreeItem.move{
+	background:rgba(150,150,150,0.1);
+	z-index:20;
+}

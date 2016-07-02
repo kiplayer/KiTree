@@ -1,0 +1,97 @@
+<?php
+include_once "./layout/header.html";
+?>
+<script type="text/javascript">
+$(document).ready(function(){
+	editor = CodeMirror(document.getElementById("itemSource"),{
+		mode: "text/html",
+		styleActiveLine: true,
+		lineNumbers: true,
+		lineWrapping: true,
+		value: document.getElementById('itemExample').innerHTML
+	});
+});
+</script>
+			<!--div id="content"-->
+				<div class="location">
+					Demo > Use Drag & Drop
+				</div>
+
+				<h3>Use Drag & Drop</h3>
+				<div class="contentItem">
+					<div id="itemExample">
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").kiTree({
+		width: 200,
+		height: 300,
+		useDrag: true,
+		dragSuccess: function(data){
+			/*$.ajax({
+				type:"POST",
+				dataType:"json",
+				url:"/portal/api_save.json",
+				data:{"dragId":dragId,"targetId":targetDoId,"type":targetDoType},
+				timeout:5000,
+				success:function(data){*/
+					return true;
+				/*},
+				error:function(){
+					//접속실패(원위치 이동)
+					element.style.left = or_y+"px";
+					console.log("실패");
+					return false;
+				}
+			});*/
+		}
+	});
+});
+</script>
+<div class="tree">
+	<ul>
+		<li>
+			<a href="#">Menu #1</a>
+			<ul>
+				<li><a href="#">Menu #1-1</a></li>
+				<li><a href="#">Menu #1-2</a></li>
+				<li><a href="#">Menu #1-3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Menu #2</a>
+			<ul>
+				<li><a href="#">Menu #2-1</a></li>
+				<li><a href="#">Menu #2-2</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Menu #3</a></li>
+		<li>
+			<a href="#">Menu #4</a>
+			<ul>
+				<li><a href="#">Menu #4-1</a></li>
+				<li><a href="#">Menu #4-2</a></li>
+				<li>
+					<a href="#">Menu #4-3</a>
+					<ul>
+						<li><a href="#">Menu #4-3-1</a></li>
+						<li><a href="#">Menu #4-3-2</a></li>
+						<li><a href="#">Menu #4-3-3</a></li>
+						<li><a href="#">Menu #4-3-4</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu #4-4</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+					<div class="adArea">
+						AD
+					</div>
+					<div id="itemSource">
+					</div>
+				</div>
+			<!--/div-->
+<?php
+include_once "./layout/footer.html";
+?>

@@ -1,0 +1,213 @@
+<?php
+include_once "./layout/header.html";
+?>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.viewSource').each(function() {
+		var $this = $(this),
+			$code = $this.html().replace("<!--","<").replace("-->",">");
+		$this.empty();
+		CodeMirror(this, {
+			value: $code,
+			mode: "text/html",
+			lineNumbers: true,
+			lineWrapping: true,
+			readOnly: true
+		});
+	});
+	
+	$(".tree").kiTree();
+});
+</script>
+			<!--div id="content"-->
+				<h3 id="Introduction">Introduction</h3>
+				<div class="contentItem">
+					kiTree is a jQuery widget for displaying a tree structure in html. It supports json data, loading via ajax and drag-and-drop.
+				</div>
+
+				<h3 id="Features">Features</h3>
+				<div class="contentItem">
+					<ul class="listStyle">
+						<li>Create a tree from JSON data</li>
+						<li>Load data using ajax</li>
+						<li>Drag and drop</li>
+						<li>체크박스 기능</li>
+						<li>Works on ie9+, firefox, chrome and safari</li>
+					</ul>
+				</div>
+
+				<h3 id="Download">Download</h3>
+				<div class="contentItem">
+					<ul class="listStyle">
+						<li>All (version 1.0.1): <a href="./download/jquery.kitree.1.0.1.zip" target="_blank" class="link">jquery.kitree.1.0.1.zip</a></li>
+						<li>Javascript: <a href="./demo/js/jquery.kitree.min.js" target="_blank" class="link">jquery.kitree.min.js</a></li>
+						<li>Css: <a href="./demo/css/kitree.css" target="_blank" class="link">kitree.css</a></li>
+					</ul>
+				</div>
+
+				<div class="adArea">
+					AD
+				</div>
+
+				<h3 id="Tutorial">Tutorial</h3>
+				<div class="contentItem">
+					<h4>Include jQuery</h4>
+					<div class="viewSource"><!--script src="jquery.min.js"></script--></div>
+					<h4>Include jquery.kitree.min.js:</h4>
+					<div class="viewSource"><!--script src="jquery.kitree.min.js"></script--></div>
+					<h4>Include kitree.css:</h4>
+					<div class="viewSource"><!--link rel="stylesheet" href="kitree.css"--></div>
+					<h4>Create a tree html.</h4>
+					<div class="viewSource"><div class="tree">
+	<ul>
+		<li>
+			<a href="#">Menu #1</a>
+			<ul>
+				<li><a href="#">Menu #1-1</a></li>
+				<li><a href="#">Menu #1-2</a></li>
+				<li><a href="#">Menu #1-3</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Menu #2</a>
+			<ul>
+				<li><a href="#">Menu #2-1</a></li>
+				<li><a href="#">Menu #2-2</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Menu #3</a></li>
+		<li>
+			<a href="#">Menu #4</a>
+			<ul>
+				<li><a href="#">Menu #4-1</a></li>
+				<li><a href="#">Menu #4-2</a></li>
+				<li>
+					<a href="#">Menu #4-3</a>
+					<ul>
+						<li><a href="#">Menu #4-3-1</a></li>
+						<li><a href="#">Menu #4-3-2</a></li>
+						<li><a href="#">Menu #4-3-3</a></li>
+						<li><a href="#">Menu #4-3-4</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu #4-4</a></li>
+			</ul>
+		</li>
+	</ul>
+</div></div>
+					<h4>Create tree widget.</h4>
+					<div class="viewSource"><!--script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").kiTree();
+});
+</script--></div>
+					<h4>Result</h4>
+					<div class="tree">
+						<ul>
+							<li>
+								<a href="#">Menu #1</a>
+								<ul>
+									<li><a href="#">Menu #1-1</a></li>
+									<li><a href="#">Menu #1-2</a></li>
+									<li><a href="#">Menu #1-3</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Menu #2</a>
+								<ul>
+									<li><a href="#">Menu #2-1</a></li>
+									<li><a href="#">Menu #2-2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Menu #3</a></li>
+							<li>
+								<a href="#">Menu #4</a>
+								<ul>
+									<li><a href="#">Menu #4-1</a></li>
+									<li><a href="#">Menu #4-2</a></li>
+									<li>
+										<a href="#">Menu #4-3</a>
+										<ul>
+											<li><a href="#">Menu #4-3-1</a></li>
+											<li><a href="#">Menu #4-3-2</a></li>
+											<li><a href="#">Menu #4-3-3</a></li>
+											<li><a href="#">Menu #4-3-4</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Menu #4-4</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<h3 id="Options">Options</h3>
+				<div class="contentItem">
+					<table class="list th-effect">
+					<colgroup>
+					<col width="20%" />
+					<col width="30%" />
+					<col width="50%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th>Name</th>
+						<th>Value</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>width</td>
+						<td><b>100%</b> / Number</td>
+						<td>Tree Division Width</td>
+					</tr>
+					<tr>
+						<td>height</td>
+						<td><b>auto</b> / Number</td>
+						<td>Tree Division Height</td>
+					</tr>
+					<tr>
+						<td>maxDepth</td>
+						<td><b>4</b> / Number</td>
+						<td>Max Step</td>
+					</tr>
+					<tr>
+						<td>bordered</td>
+						<td><b>false</b> / true</td>
+						<td>트리 외부 테두리 노출 여부</td>
+					</tr>
+					<tr>
+						<td>useCount</td>
+						<td><b>false</b> / true</td>
+						<td>내부 아이템 개수 노출 여부</td>
+					</tr>
+					<tr>
+						<td>useCheckbox</td>
+						<td><b>false</b> / true</td>
+						<td>체크박스 효과 기능 사용 여부</td>
+					</tr>
+					<tr>
+						<td>errorMsg</td>
+						<td>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>useDrag</td>
+						<td><b>false</b> / true</td>
+						<td>드레그앤드롭 기능 사용 여부</td>
+					</tr>
+					<tr>
+						<td>dragSuccess</td>
+						<td><b>None</b> / Function(){}</td>
+						<td>드레그앤드롭 할 경우 실행 함수</td>
+					</tr>
+					</tbody>
+					</table>
+					<p>* Value Bold Text = Default Value</p>
+				</div>
+			<!--/div-->
+<?php
+include_once "./layout/footer.html";
+?>

@@ -1,0 +1,67 @@
+<?php
+include_once "./layout/header.html";
+?>
+<script type="text/javascript">
+$(document).ready(function(){
+	editor = CodeMirror(document.getElementById("itemSource"),{
+		mode: "text/html",
+		styleActiveLine: true,
+		lineNumbers: true,
+		lineWrapping: true,
+		value: document.getElementById('itemExample').innerHTML
+	});
+});
+</script>
+			<!--div id="content"-->
+				<div class="location">
+					Demo > Use JSON Data
+				</div>
+
+				<h3>Use JSON Data</h3>
+				<div class="contentItem">
+					<div id="itemExample">
+<script type="text/javascript">
+var treeData = [
+		{
+			"name":"Menu #1","url":"#",list:[
+				{
+					"name":"Menu #1-1","url":"#"
+				},
+				{
+					"name":"Menu #1-2","url":"#"
+				},
+				{
+					"name":"Menu #1-3","url":"#"
+				}
+			]
+		},
+		{
+			"name":"Menu #2","url":"#"
+		},
+		{
+			"name":"Menu #3","url":"#"
+		},
+		{
+			"name":"Menu #4","url":"#"
+		}
+	];
+$(document).ready(function(){
+	$(".tree").kiTree({
+		width: 200,
+		data: treeData
+	});
+});
+</script>
+<div class="tree">
+</div>
+					</div>
+					<div class="adArea">
+						AD
+					</div>
+					<div id="itemSource">
+					</div>
+				</div>
+			<!--/div-->
+<?php
+include_once "./layout/footer.html";
+?>
